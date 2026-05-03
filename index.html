@@ -156,7 +156,9 @@ gap:18px;
 
 .panel{
 padding:18px;
-min-height:760px;
+
+/* 🔥 เอาความสูงล็อกออก */
+height:auto;
 }
 
 .title{
@@ -259,10 +261,17 @@ background:linear-gradient(90deg,var(--cyan),var(--green));
 }
 
 .aiGrid{
-display:grid;
-gap:11px;
-max-height:690px;
-overflow:auto;
+  display:grid;
+
+  /* 🔥 บังคับ 2 คอลัมน์ */
+  grid-template-columns:repeat(2, 1fr);
+
+  /* 🔥 บังคับ 5 แถว */
+  grid-template-rows:repeat(5, auto);
+
+  gap:10px;
+
+  height:auto;
 }
 
 .ai{
@@ -504,7 +513,30 @@ font-weight:800;
 .qWin{ background:#00ba73; }
 .qLose{ background:#d63d5e; }
 
+/* ===== COMPACT AI (FINAL) ===== */
+.ai{
+  padding:8px;
+  border-radius:12px;
 
+  /* 🔥 เพิ่มเข้าไป */
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+}
+
+.head{
+  font-size:12px;
+}
+
+.hist{
+  gap:2px;
+}
+
+.hit{
+  height:12px;
+  font-size:9px;
+}
 
 </style>
 </head>
